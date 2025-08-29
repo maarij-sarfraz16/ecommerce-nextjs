@@ -48,7 +48,7 @@ export async function getCustomerState(userId: string) {
  * Get all subscriptions for a user
  */
 export async function getUserSubscriptions(userId: string) {
-  const subscriptions = await db.query.polarSubscriptionTable.findMany({
+  const subscriptions: any[] = await db.query.polarSubscriptionTable.findMany({
     where: eq(polarSubscriptionTable.userId, userId),
   });
 
